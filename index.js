@@ -33,7 +33,4 @@ function backupFolder(folder, to) {
     zipFolder(folder, to, backupName);
 }
 
-var folder = path.join('tmp', 'backupthis');
-var to = path.join('tmp', 'backup');
-
-backupFolder(folder, to);
+module.exports =  {backupFolder: backupFolder};
