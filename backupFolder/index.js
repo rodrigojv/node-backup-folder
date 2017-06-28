@@ -2,7 +2,6 @@ var jetpack = require('fs-jetpack');
 var path = require('path');
 var fs = require('fs');
 var archiver = require('archiver');
-var zip = require('./zip-folder');
 
 function zipFolder(dir, to, zipName) {
     var output = fs.createWriteStream(path.join(to, zipName + '.zip'));
@@ -26,11 +25,11 @@ function zipFolder(dir, to, zipName) {
     archive.finalize();
 }
 
-function backupFolder(folder, to) {
+function backup(folder, to) {
     jetpack.dir(to);
     var backupName = path.basename(to) + '-' + Date.now();
 
     zipFolder(folder, to, backupName);
 }
 
-module.exports =  {backupFolder: backupFolder};
+module.exports =  {backup: backup};

@@ -3,8 +3,9 @@ Backups a folder by compressing it first and than copies the comprresed folder t
 
 Usage:
 ```javascript
+var backupFolder = require('./backupFolder');
 var folder = path.join('tmp', 'backupthis');
 var to = path.join('tmp', 'backup');
 
-backupFolder(folder, to);
+backupFolder.backup(folder, to);
 ```
